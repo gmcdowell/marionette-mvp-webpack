@@ -1,0 +1,31 @@
+.header {
+  .navbar-brand {
+    height: $navbar-height + 1;
+    margin-bottom: -1px;
+    font-weight: 500;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $brand-danger;
+      color: white;
+    }
+
+    span {
+      font-weight: 200;
+    }
+  }
+
+  .navbar-nav > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $brand-danger;
+      border-bottom: 3px solid $brand-danger;
+      margin-bottom: -1px;
+      padding-bottom: $navbar-padding-vertical - 2px;
+    }
+  }
+}
