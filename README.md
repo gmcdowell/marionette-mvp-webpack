@@ -34,5 +34,12 @@ A boilerplate for developing [MarionetteJS](http://http://marionettejs.com/) Sin
     webpack.config.js               -> webpack configuration (development)
     webpack.production.config.js    -> webpack configuration (production)
     
-### Principles
+### Objective
+To put together something that works for me ;)
+
+### Technologies
+- JS  -> ES6
+- AMD -> Webpack
+- CSS -> Bootstrap-Sass
+- SPA -> Marionette & Backbone
 
