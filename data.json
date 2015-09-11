@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Cirlce Chart",
+    "type": "circle"
+  },
+  {
+    "name": "Square Chart",
+    "type": "square"
+  },
+  {
+    "name": "Line Chart",
+    "type": "line"
+  },
+  {
+    "name": "Ellipse Chart",
+    "type": "ellipse"
+  }
+]

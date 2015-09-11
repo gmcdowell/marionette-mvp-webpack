@@ -53,7 +53,8 @@ var config = {
 
       // convienance
       'apps': path.resolve(srcPath, 'apps'),
-      'services': path.resolve(srcPath, 'services')
+      'services': path.resolve(srcPath, 'services'),
+      'behaviors': path.resolve(srcPath, 'behaviors')
     }
   }
 };

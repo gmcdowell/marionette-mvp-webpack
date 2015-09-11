@@ -2,11 +2,21 @@
  * Created by greg on 10/09/15.
  */
 
-import {ItemView} from 'marionette';
+import {CompositeView, ItemView} from 'marionette';
 import template from './template.hbs';
+import link_template from './link.hbs';
 
+var LinkView = ItemView.extend({
+  tagName: 'li',
+  template: link_template,
+  attributes: {
+    role: 'presentation'
+  }
+});
 
-export default ItemView.extend({
+export default CompositeView.extend({
   template: template,
-  tagName: 'div'
+  tagName: 'div',
+  childView: LinkView,
+  childViewContainer: '#nav-tabs' // ul
 });

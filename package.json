@@ -27,6 +27,7 @@
     "bootstrap-sass": "^3.3.5",
     "bootstrap-sass-loader": "^1.0.9",
     "css-loader": "^0.10.1",
+    "d3": "^3.5.6",
     "express": "^4.12.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
