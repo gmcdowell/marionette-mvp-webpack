@@ -8,12 +8,9 @@ import d3 from 'd3';
 export default Behavior.extend({
 
   defaults: {
-    element: '#cirlce', // svg element
-    container: {
-      tag: 'svg',
-      width: 50,
-      height: 50
-    },
+    tag: 'svg',
+    width: 200,
+    height: 200,
 
     data: [],
 
@@ -21,10 +18,10 @@ export default Behavior.extend({
   },
 
   onShow(){
-    var container = d3.select(this.options.element)
-      .append(this.options.container.tag)
-      .attr('width', this.options.container.width)
-      .attr('height', this.options.container.height);
+    var container = d3.select(this.el)
+        .append(this.options.tag)
+        .attr('width', this.options.width)
+        .attr('height', this.options.height);
 
     var shapes = container.selectAll(this.options.shape)
       .data(this.options.data)

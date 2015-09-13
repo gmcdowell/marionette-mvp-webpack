@@ -1,5 +1,5 @@
 /**
- * Created by greg on 11/09/15.
+ * Created by greg on 12/09/15.
  */
 
 import {Behavior} from 'marionette';
@@ -13,11 +13,10 @@ export default Behavior.extend({
         height: 200,
         data: [],
 
-        shape: 'ellipse'
+        shape: 'polygon'
     },
 
     onShow: function () {
-
         var container = d3.select(this.el)
             .append(this.options.tag)
             .attr('width', this.options.width)
@@ -25,22 +24,5 @@ export default Behavior.extend({
 
         var shapes = container.selectAll(this.options.shape).data(this.options.data)
             .enter().append(this.options.shape);
-
-        var attrs = shapes
-            .attr('cx', function (d) {
-                return d.x_axis;
-            })
-            .attr('cy', function (d) {
-                return d.y_axis;
-            })
-            .attr('rx', function (d) {
-                return d.x_radius;
-            })
-            .attr('ry', function (d) {
-                return d.y_radius;
-            })
-            .style('fill', function (d) {
-                return d.color;
-            });
     }
 });

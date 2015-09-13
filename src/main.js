@@ -14,44 +14,28 @@ import HomeRouter from 'apps/home/router';
 
 import DataStore from './models/chart_collection.js';
 
-var data = [
-  {
-    "name": "Cirlce Chart",
-    "type": "circle"
-  },
-  {
-    "name": "Square Chart",
-    "type": "square"
-  },
-  {
-    "name": "Line Chart",
-    "type": "line"
-  },
-  {
-    "name": "Ellipse Chart",
-    "type": "ellipse"
-  }
-];
+// load data from file
+var data = require('json!../data.json');
+
 
 // load data from json file
-let Data = new DataStore(data);
-
+const Data = new DataStore(data, {parse:true}); // transform data
 
 let App = new Application();
 
-// Services
-HeaderService.setup({
-  container: App.layout.getRegion('header'),
-  collection: Data
-});
-
 // Child Apps
 App.Home = new HomeRouter({
-  container: App.layout.getRegion('content'),
-  collection: Data
+    container: App.layout.getRegion('content'),
+    collection: Data
+});
+
+// Services
+HeaderService.setup({
+    container: App.layout.getRegion('header'),
+    collection: Data
 });
 
 // Application initialization
 $(document).on('ready', function () {
-  App.start();
+    App.start();
 });

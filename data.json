@@ -1,7 +1,27 @@
 [
   {
     "name": "Cirlce Chart",
-    "type": "circle"
+    "type": "circle",
+    "data": [
+      {
+        "x_axis": 50,
+        "y_axis": 50,
+        "radius": 40,
+        "color": "green"
+      },
+      {
+        "x_axis": 50,
+        "y_axis": 50,
+        "radius": 25,
+        "color": "purple"
+      },
+      {
+        "x_axis": 50,
+        "y_axis": 50,
+        "radius": 10,
+        "color": "red"
+      }
+    ]
   },
   {
     "name": "Square Chart",
