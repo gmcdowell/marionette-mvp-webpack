@@ -19,20 +19,6 @@ export default Behavior.extend({
       {circleData: this.view.options.model.get('circleData')},
       {rectangleData: this.view.options.model.get('rectangleData')}
     );
-
-    /*this.options.circleData = [
-     { "cx": 20, "cy": 20, "radius": 20, "color" : "green" },
-     { "cx": 70, "cy": 70, "radius": 20, "color" : "purple" }];*/
-
-    //_.extend(this.options, {data: this.view.options.model.get('data')});
-    //console.log('data', this.view.options.model.get('data'));
-
-    //console.log('group', this.options.data);
-    /*this.options.rectangleData = [
-     { "rx": 110, "ry": 110, "height": 30, "width": 30, "color" : "blue" },
-     { "rx": 160, "ry": 160, "height": 30, "width": 30, "color" : "red" }];*/
-    //this.options.rectangleData = this.view.options.model.get('data');
-
   },
 
   onShow() {
