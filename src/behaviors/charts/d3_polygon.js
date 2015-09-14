@@ -16,13 +16,22 @@ export default Behavior.extend({
         shape: 'polygon'
     },
 
-    onShow: function () {
-        var container = d3.select(this.el)
-            .append(this.options.tag)
-            .attr('width', this.options.width)
-            .attr('height', this.options.height);
+  initialize: function (options) {
+    //_.extend(this.options, {data: this.view.options.model.get('data')});
+  },
 
-        var shapes = container.selectAll(this.options.shape).data(this.options.data)
-            .enter().append(this.options.shape);
+    onShow: function () {
+      var container = d3.select(this.el)
+        .append(this.options.tag)
+        .attr('width', this.options.width)
+        .attr('height', this.options.height);
+
+      var shapes = container.append(this.options.shape);
+
+      var attrs = shapes
+        .attr('points', this.options.data)
+        .attr('fill', 'yellow')
+        .attr('stroke', 'blue')
+        .attr('stroke-width', 2);
     }
 });

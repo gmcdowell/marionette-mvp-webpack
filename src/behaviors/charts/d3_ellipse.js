@@ -16,6 +16,10 @@ export default Behavior.extend({
         shape: 'ellipse'
     },
 
+  initialize: function (options) {
+    _.extend(this.options, {data: this.view.options.model.get('data')});
+  },
+
     onShow: function () {
 
         var container = d3.select(this.el)

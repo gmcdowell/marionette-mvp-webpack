@@ -12,143 +12,109 @@ import D3Charts from 'behaviors/charts/index';
 
 // D3 ItemViews
 var Item = ItemView.extend({
-    template: chart,
-    tagName: 'div',
-    className: 'tab-pane fade',
-    attributes: {
-        role: 'tabpanel'
-    },
-    onBeforeRender: function () {
-        this.$el.attr('id', this.model.cid);
+  template: chart,
+  tagName: 'div',
+  className: 'tab-pane fade',
+  attributes: {
+    role: 'tabpanel'
+  },
+  onBeforeRender: function () {
+    this.$el.attr('id', this.model.cid);
+  }
+});
+var Group = Item.extend({
+  behaviors: {
+    GroupChart: {
+      behaviorClass: D3Charts.Group,
+      width: 200,
+      height: 200
     }
+  }
 });
 var Circle = Item.extend({
-    behaviors:{
-        CirleChart: {
-            behaviorClass: D3Charts.Circle,
-            width: 200,
-            height: 200/*,
-            data: [
-                {
-                    x_axis: 50,
-                    y_axis: 50,
-                    radius: 40,
-                    color: "green"
-                },
-                {
-                    x_axis: 50,
-                    y_axis: 50,
-                    radius: 25,
-                    color: "purple"
-                },
-                {
-                    x_axis: 50,
-                    y_axis: 50,
-                    radius: 10,
-                    color: "red"
-                }
-            ]*/
-        }
+  behaviors: {
+    CirleChart: {
+      behaviorClass: D3Charts.Circle,
+      width: 200,
+      height: 200
     }
+  }
 });
 var Square = Item.extend({
-    behaviors: {
-        SquareChart: {
-            behaviorClass: D3Charts.Square,
-            width: 200,
-            height: 200,
-            data: [
-                {
-                    x_axis: 30,
-                    y_axis: 30,
-                    width: 50,
-                    height: 100,
-                    color: "green"
-                }
-            ]
-        }
+  behaviors: {
+    SquareChart: {
+      behaviorClass: D3Charts.Square,
+      width: 200,
+      height: 200
     }
+  }
 });
 var Ellipse = Item.extend({
-    behaviors: {
-        EllipseChart: {
-            behaviorClass: D3Charts.Ellipse,
-            width: 200,
-            height: 200,
-            data: [
-                {
-                    x_axis: 50,
-                    y_axis: 50,
-                    x_radius: 50,
-                    y_radius: 20,
-                    color: "green"
-                }
-            ]
-        }
+  behaviors: {
+    EllipseChart: {
+      behaviorClass: D3Charts.Ellipse,
+      width: 200,
+      height: 200
     }
+  }
 });
 var Line = Item.extend({
-    behaviors: {
-        LineChart: {
-            behaviorClass: D3Charts.Line,
-            width: 200,
-            height: 200,
-            data: [
-                {
-                    x_axis_1: 5,
-                    y_axis_1: 5,
-                    x_axis_2: 50,
-                    y_axis_2: 50,
-                    color: "green",
-                    width: 2
-                }
-            ]
-        }
+  behaviors: {
+    LineChart: {
+      behaviorClass: D3Charts.Line,
+      width: 200,
+      height: 200,
+      stroke: 'blue',
+      strokeWidth: 2,
+      fill: 'none'
     }
+  }
 });
 var Polyline = Item.extend({
-    behaviors: {
-        PolylineChart: {
-            behaviorClass: D3Charts.Polyline,
-            width: 200,
-            height: 200,
-            data: []
-        }
+  behaviors: {
+    PolylineChart: {
+      behaviorClass: D3Charts.Polyline,
+      width: 200,
+      height: 200,
+      data: "05,30 15,30 15,20 25,20 25,10 35,10"
     }
+  }
 });
 var Polygon = Item.extend({
-    behaviors: {
-        PolylineChart: {
-            behaviorClass: D3Charts.Polygon,
-            width: 200,
-            height: 200,
-            data: []
-        }
+  behaviors: {
+    PolylineChart: {
+      behaviorClass: D3Charts.Polygon,
+      width: 200,
+      height: 200,
+      data: "05,30 15,10 25,30"
     }
+  }
 });
 
 
 export default CollectionView.extend({
-    tagName: 'div',
-    className: 'tab-content',
-    getChildView: function (item) {
-        switch (item.get('type')) {
-            default: // circle
-                return Circle;
-            case 'square':
-                return Square;
-            case 'ellipse':
-                return Ellipse;
-            case 'line':
-                return Line;
-            case 'polyline':
-                return Polyline;
-                break;
-            case 'polygon':
-                return Polygon;
-        }
-    },
-    onRenderCollection: function () {
-        this.children.findByIndex(0).$el.addClass('in active');
+  tagName: 'div',
+  className: 'tab-content',
+  getChildView: function (item) {
+    switch (item.get('type')) {
+      default: // item
+        return Group;
+      case 'circle':
+        return Circle;
+      case 'square':
+        return Square;
+      case 'ellipse':
+        return Ellipse;
+      case 'line':
+        return Line;
+      case 'polyline':
+        return Polyline;
+        break;
+      case 'polygon':
+        return Polygon;
     }
+  },
+  onRenderCollection: function () {
+    this.children.findByIndex(0).$el.addClass('in active');
+  }
 });

@@ -15,11 +15,11 @@ import HomeRouter from 'apps/home/router';
 import DataStore from './models/chart_collection.js';
 
 // load data from file
-var data = require('json!../data.json');
+var chart_data = require('json!../data.json');
 
 
 // load data from json file
-const Data = new DataStore(data, {parse:true}); // transform data
+const Data = new DataStore(chart_data); // transform data
 
 let App = new Application();
 

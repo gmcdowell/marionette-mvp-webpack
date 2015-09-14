@@ -25,14 +25,114 @@
   },
   {
     "name": "Square Chart",
-    "type": "square"
+    "type": "square",
+    "data": [
+      {
+        "x_axis": 10,
+        "y_axis": 10,
+        "width": 20,
+        "height": 20,
+        "color": "green"
+      },
+      {
+        "x_axis": 160,
+        "y_axis": 40,
+        "width": 20,
+        "height": 20,
+        "color": "purple"
+      },
+      {
+        "x_axis": 70,
+        "y_axis": 70,
+        "width": 20,
+        "height": 20,
+        "color": "red"
+      }
+    ]
   },
   {
     "name": "Line Chart",
-    "type": "line"
+    "type": "line",
+    "data": [
+      {
+        "x": 1,
+        "y": 5
+      },
+      {
+        "x": 20,
+        "y": 20
+      },
+      {
+        "x": 40,
+        "y": 10
+      },
+      {
+        "x": 60,
+        "y": 40
+      },
+      {
+        "x": 80,
+        "y": 5
+      },
+      {
+        "x": 100,
+        "y": 60
+      }
+    ]
   },
   {
     "name": "Ellipse Chart",
-    "type": "ellipse"
+    "type": "ellipse",
+    "data": [
+      {
+        "x_axis": 50,
+        "y_axis": 50,
+        "x_radius": 50,
+        "y_radius": 20,
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "name": "Polyline Chart",
+    "type": "polyline"
+  },
+  {
+    "name": "Polygon Chart",
+    "type": "polygon"
+  },
+  {
+    "name": "Group Chart",
+    "type": "group",
+    "circleData": [
+      {
+        "cx": 20,
+        "cy": 20,
+        "radius": 20,
+        "color": "green"
+      },
+      {
+        "cx": 70,
+        "cy": 70,
+        "radius": 20,
+        "color": "purple"
+      }
+    ],
+    "rectangleData": [
+      {
+        "rx": 110,
+        "ry": 110,
+        "height": 30,
+        "width": 30,
+        "color": "blue"
+      },
+      {
+        "rx": 160,
+        "ry": 160,
+        "height": 30,
+        "width": 30,
+        "color": "red"
+      }
+    ]
   }
 ]
